@@ -1,4 +1,4 @@
-package T1_1_4_SemaphoreTest;
+package chapter1.T1_1_4_SemaphoreTest;
 
 import Common.Tools;
 

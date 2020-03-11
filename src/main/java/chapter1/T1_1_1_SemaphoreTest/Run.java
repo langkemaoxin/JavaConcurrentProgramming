@@ -1,4 +1,4 @@
-package T1_1_1_SemaphoreTest;
+package chapter1.T1_1_1_SemaphoreTest;
 
 import java.util.concurrent.Semaphore;
 

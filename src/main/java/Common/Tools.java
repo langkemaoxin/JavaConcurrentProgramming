@@ -13,9 +13,11 @@ public class Tools {
      */
     public static void longTask(int count){
 
-        for (int i = 0; i < Integer.MAX_VALUE/50; i++) {
-            String s = new String();
-            Math.random();
+        for (int j = 0; j < count; j++) {
+            for (int i = 0; i < Integer.MAX_VALUE/50; i++) {
+                String s = new String();
+                Math.random();
+            }
         }
     }
 

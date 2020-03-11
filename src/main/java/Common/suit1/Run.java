@@ -1,21 +1,13 @@
-package Common;
+package Common.suit1;
 
 import java.util.concurrent.Semaphore;
 
 /**
- * @ClassName Template
- * @Description TODO
- * @Author GY.C
- * @Date 2020/3/11 8:10
- * @Version 1.0
+ *
+ * 套餐一：
+ *
  */
-public class Template {
-}
 
-
-/**
- * 运行方式一：
- */
 class Run{
     public static void main(String[] args) {
         MyService myService = new MyService();
@@ -29,11 +21,14 @@ class MyService{
     private Semaphore semaphore=new Semaphore(1);
     public void testMethod(){
         try{
+            semaphore.acquire();
+            System.out.println("ThreadName="+Thread.currentThread().getName());
+            Thread.sleep(1000);
 
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-
+            semaphore.release();
         }
     }
 }
@@ -51,25 +46,3 @@ class MyThread extends Thread{
     }
 }
 
-
-
-
-/**
- * 运行方式二：
- */
-class Run2{
-    public static void main(String[] args) {
-        MyService myService = new MyService();
-
-        Integer threadCount=5;
-
-        MyThread[] myThreads=new MyThread[threadCount];
-        for (int i = 0; i < threadCount; i++) {
-            myThreads[i]=new MyThread(myService);
-        }
-        for (int i = 0; i < threadCount; i++) {
-            myThreads[i].start();
-        }
-
-    }
-}
