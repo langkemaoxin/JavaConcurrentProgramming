@@ -91,7 +91,7 @@ class MyThread extends Thread {
             Thread.sleep((int) (Math.random() * 10000));
             endTag.countDown();
 
-            System.out.println(Tools.getName() + "到达终点");
+            System.out.println(Tools.getName() + "到达终点,我是第"+ (10-endTag.getCount())+"名");
 
         } catch (InterruptedException e) {
             e.printStackTrace();
