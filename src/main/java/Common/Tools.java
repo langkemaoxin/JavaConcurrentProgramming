@@ -24,4 +24,12 @@ public class Tools {
     public static void longTask(){
         longTask(1);
     }
+
+    public static String getName(){
+        return Thread.currentThread().getName();
+    }
+
+    public static long getTime(){
+        return System.currentTimeMillis();
+    }
 }
