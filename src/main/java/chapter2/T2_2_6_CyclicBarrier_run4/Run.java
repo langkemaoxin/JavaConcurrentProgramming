@@ -1,11 +1,9 @@
-package chapter2.T2_2_6_CyclicBarrier_run4.T2_2_5_CyclicBarrier_run3;
+package chapter2.T2_2_6_CyclicBarrier_run4;
 
 import Common.Tools;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /**
  * @ClassName Run
