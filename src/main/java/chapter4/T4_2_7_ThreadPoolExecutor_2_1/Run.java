@@ -36,6 +36,11 @@ import java.util.concurrent.TimeUnit;
  * 案例说明：
  * 执行的数量小于核心数量，其他参数忽略
  *
+ *
+ * 注意：
+ * 队列使用SynchronousQueue
+ * 并且线程数量小于<=corePoolSize
+ * 所以keepAliveTime>5时也不清除空闲线程
  */
 public class Run {
     public static void main(String[] args) throws InterruptedException {
