@@ -48,4 +48,12 @@ public class Tools {
             e.printStackTrace();
         }
     }
+
+    public static void pBegin(){
+        System.out.println("begin "+ Tools.getName()+Tools.getTime());
+    }
+
+    public static void pEnd(){
+        System.out.println("end "+ Tools.getName()+Tools.getTime());
+    }
 }
