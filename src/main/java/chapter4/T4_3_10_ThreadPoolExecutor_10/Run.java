@@ -1,4 +1,4 @@
-package chapter4.T4_3_10_ThreadPoolExecutor_10.T4_3_9_ThreadPoolExecutor_9;
+package chapter4.T4_3_10_ThreadPoolExecutor_10;
 
 import Common.Tools;
 
