@@ -1,10 +1,9 @@
-package chapter4.T4_3_12_Policy_DiscardPolicy;
+package chapter4.T4_3_12_Policy_DiscardPolicy.T4_3_12_Policy_DiscardOldestPolicy;
 
 import Common.Tools;
 
 import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -18,10 +17,10 @@ import java.util.concurrent.TimeUnit;
  * 1. 原始线程数量：2
  * 2. 最大线程数量：3
  * 3. 队列容量：2
- * 4. 添加任务的拒绝策略为：DiscardOldestPolicy
+ * 4. 添加任务的拒绝策略为：DiscardPolicy
  * <p>
  * 效果为：
- * 可以同时执行5个任务【最大线程数量3+队列数量2】
+ * DiscardPolicy 发现队列中都已经占满后，直接丢掉。
  */
 public class Run {
     public static void main(String[] args) throws InterruptedException {
@@ -30,7 +29,7 @@ public class Run {
 
         ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 3, 5,
                 TimeUnit.SECONDS, queue,
-                new ThreadPoolExecutor.DiscardOldestPolicy());
+                new ThreadPoolExecutor.DiscardPolicy());
 
         for (int i = 0; i < 5; i++) {
             MyRunnable myRunnable = new MyRunnable("Runnable " + (i + 1));
